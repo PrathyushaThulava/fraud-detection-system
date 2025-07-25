@@ -3,11 +3,10 @@ import numpy as np
 import pickle
 import os
 
-# Load model and scaler
-assert os.path.exists("fraud_model.pkl"), "Model file not found!"
-assert os.path.exists("scaler.pkl"), "Scaler file not found!"
-model = pickle.load(open("fraud_model.pkl", "rb"))
-scaler = pickle.load(open("scaler.pkl", "rb"))
+import joblib
+
+model = joblib.load("fraud_model.joblib")
+scaler = joblib.load("scaler.joblib")
 
 # --- Page Configuration ---
 st.set_page_config(page_title="Fraud Detection System", page_icon="🛡️", layout="wide")
