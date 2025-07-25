@@ -4,6 +4,8 @@ import pickle
 import os
 
 # Load model and scaler
+assert os.path.exists("fraud_model.pkl"), "Model file not found!"
+assert os.path.exists("scaler.pkl"), "Scaler file not found!"
 model = pickle.load(open("fraud_model.pkl", "rb"))
 scaler = pickle.load(open("scaler.pkl", "rb"))
 
